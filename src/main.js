@@ -22,6 +22,7 @@ import Avatar       from "primevue/avatar";
 import Menu         from "primevue/menu";
 import Menubar      from "primevue/menubar";
 import Toolbar      from "primevue/toolbar";
+import i18n from "./i18n.js";
 
 // Application instance
 const app = createApp(App);
@@ -36,6 +37,9 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-menu', Menu)
     .component('pv-menubar', Menubar)
     .component('pv-toolbar', Toolbar);
+
+// i18n Setup
+app.use(i18n);
 
 // Application Component Mounting
 app.mount('#app');
