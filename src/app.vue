@@ -5,10 +5,11 @@ import ArticleList from "./news/components/article-list.component.vue";
 import UnavailableContent from "./news/components/unavailable-content.component.vue";
 import SideMenu from "./news/components/side-menu.component.vue";
 import LanguageSwitcher from "./public/components/language-switcher.component.vue";
+import FooterContent from "./public/components/footer-content.component.vue";
 
 export default {
   name: "app",
-  components: {LanguageSwitcher, SideMenu, UnavailableContent, ArticleList},
+  components: {FooterContent, LanguageSwitcher, SideMenu, UnavailableContent, ArticleList},
   data() {
     return {
       sidebarVisible: false,
@@ -80,4 +81,5 @@ export default {
     <article-list v-if="errors" :articles="articles"/>
     <unavailable-content v-else :errors="errors"/>
   </div>
+  <footer-content/>
 </template>
