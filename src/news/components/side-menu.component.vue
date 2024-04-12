@@ -1,11 +1,8 @@
 <script>
 import {NewsApiService} from "../services/news-api.service.js";
-import PvSidebar from "../../main.js";
-import PvAvatar from "../../main.js";
 
 export default {
   name: "side-menu",
-  components: {PvAvatar, PvSidebar},
   props: { visible: Boolean },
   data() {
     return {
@@ -35,7 +32,7 @@ export default {
 
 <template>
   <pv-sidebar v-bind:visible="visible">
-    <div v-for="source in sources" class="m-4" v-on:source-selected="onSourceSelected(source)">
+    <div v-for="source in sources" class="m-4" @click="onSourceSelected(source)">
       <div class="flex align-content-start flex-wrap">
         <span class="flex align-items-center justify-content-center mr-2">
           <pv-avatar :aria-label="source.name" :image="source.urlToLogo" shape="circle"/>
